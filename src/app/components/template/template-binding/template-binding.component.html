@@ -1,0 +1,40 @@
+<h3>Text Interpolation</h3>
+<p> {{ name }} - {{ age }} - {{ sum(3,2)}} </p>
+
+<p> {{ sum(1,5)}} </p>
+
+<p> Idade é {{ condition }} que 1 </p>
+
+<hr>
+<h3>Property Binding</h3>
+
+<button [disabled]="isDisable">Button</button>
+<br>
+<img [src]="srcValue" [alt]="name" [title]="name" height="100px"/>
+
+<hr>
+<h3>Attribute Binding</h3>
+<p [attr.title]="name" [attr.arial-label]="name">Lucas Fernandes</p>
+
+<hr>
+<h3>Class and Style Binding</h3>
+<p [class.background-red]="age > 29" [class.background-blue]="age <= 29"> {{ name }}</p>
+
+<!-- <p [style.text-decoration]="'underline'">{{age}}</p> -->
+<p [style.text-decoration]="isTextDecoration">{{age}}</p>
+
+<hr>
+<h2>Event Binding</h2>
+<p>{{age}}</p>
+<button (click)="incIdade()">+</button>
+<button (click)="subIdade()">-</button>
+<input (keydown.shift.t)="onKeyDown($event)"/>
+
+<div style="background: red; width: 30px; height: 30px; margin-top: 10px;" 
+     (mousemove)="onMouseMove($event)"></div>
+
+<hr>
+<h2>Two-Way Binding</h2>
+<input [(ngModel)]="name"/>
+
+{{name}}
