@@ -1,10 +1,11 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-template-binding',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './template-binding.component.html',
   styleUrl: './template-binding.component.scss'
 })
@@ -58,6 +59,6 @@ export class TemplateBindingComponent {
   //Two-Way Binding
   //Only HTML
 
-  
+  //Diretivas de Atributos
 
 }

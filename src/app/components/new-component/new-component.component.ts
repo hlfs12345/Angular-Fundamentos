@@ -9,5 +9,6 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './new-component.component.scss'
 })
 export class NewComponentComponent {
+  public name = 'New Component';
  
 }
