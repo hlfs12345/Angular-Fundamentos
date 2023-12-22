@@ -1,1 +1,96 @@
-<p>template-control-flow works!</p>
+<h2>Control Flow</h2>
+
+<h3>IF</h3>
+
+<!-- Novo -->
+@if (isTrue) {
+    <p>Lucas</p>
+} @else {
+    <p>Fernandes</p>
+}
+
+<!-- Antigo -->
+<ng-container *ngIf="isTrue; else isFalse">
+    <p>Lucas</p>
+</ng-container>
+<ng-template #isFalse> Não está correto</ng-template>
+
+<hr>
+<h3>FOR</h3>
+
+<!-- Novo -->
+@if (loadingData$ | async; as data) {
+    <ul>
+        @for (item of data; track item) {
+            <li>{{item}}</li>
+        }
+    </ul>
+} @else {
+    <p>Carregando...</p> 
+}
+<!-- 
+@for (item of loadingData$ | async; track item) {
+    <li>{{item}}</li>
+} -->
+
+<!-- Antigo -->
+<ng-container *ngIf="loadingData$ | async as data; else loading">
+    <ul>
+        <ng-container *ngFor="let item of data; trackBy: trackByFn">
+            <li>{{ item }}</li>
+        </ng-container>
+    </ul>
+</ng-container>
+<ng-template #loading><p>Carregando...</p></ng-template>
+
+<hr>
+<h3>FOR Pt 2</h3>
+
+<!-- Novo -->
+@for(
+    item of itens; track item.name;
+    let i = $index;
+    let c = $count;
+    let f = $first;
+    let l = $last;
+    let e = $even;
+    let o = $odd;
+) {
+    <p>{{ item.name }}</p>
+    <p>index - {{ i }}</p>
+    <p>count - {{ c }}</p>
+    <p>first - {{ f }}</p>
+    <p>last - {{ l }}</p>
+    <p>even - {{ e }}</p>
+    <p>odd - {{ o }}</p>
+}
+<br>
+<!-- Antigo -->
+<ng-container
+    *ngFor="
+    let item of itens; 
+    let i = index;
+    let c = count;
+    let f = first;
+    let l = last;
+    let e = even;
+    let o = odd;
+    track: trackByFn;
+    "
+>
+    <p>{{ item.name }}</p>
+    <p>index - {{ i }}</p>
+    <p>count - {{ c }}</p>
+    <p>first - {{ f }}</p>
+    <p>last - {{ l }}</p>
+    <p>even - {{ e }}</p>
+    <p>odd - {{ o }}</p>
+</ng-container>
+
+<input #name type="text">
+<button (click)="addNewName(name.value)">Add Name</button>
+
+<hr>
+<h3>For Pt 3</h3>
+
+

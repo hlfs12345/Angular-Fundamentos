@@ -22,6 +22,11 @@ import { TemplateControlFlowComponent } from "./components/template/template-con
   <!-- </div> -->
   
   `,
-    imports: [CommonModule, RouterOutlet, NewComponentComponent, TemplateBindingComponent, TemplateVariablesComponent, TemplateControlFlowComponent]
+    imports: [CommonModule, 
+              RouterOutlet,
+              NewComponentComponent, 
+              TemplateBindingComponent, 
+              TemplateVariablesComponent, 
+              TemplateControlFlowComponent]
 })
 export class AppComponent {}
