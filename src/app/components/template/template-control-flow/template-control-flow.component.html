@@ -93,4 +93,56 @@
 <hr>
 <h3>For Pt 3</h3>
 
+<!-- Nova -->
+<ul>
+    @for (item of itens; track item.name) {
+        <li> {{item.name}} </li>
+    } @empty {
+        <li>Não contém valores</li>
+    }
+</ul>
+
+<!-- Antiga -->
+<ul>
+    <ng-container *ngIf="itens.length === 0; else itensExist">
+        <li>Não contém valores</li>
+    </ng-container>
+    <ng-template #itensExist>
+        <ng-container *ngFor="let item of itens">
+            <li>{{item.name}}</li>
+        </ng-container>
+    </ng-template>
+</ul>
+
+<hr>
+
+<h3>IF, FOR, SWITCH CASE</h3>
+
+<!-- Nova -->
+@switch (switchCondition) {
+    @case ('A') {
+        <p>Sua letra é: A </p>
+    }
+
+    @case ('B') {
+        <p>Sua letra é: B </p>
+    }
+
+    @default {
+        <p>Os dados não foram encontrados</p>
+    }
+}
+
+<!-- Antiga -->
+<ng-container [ngSwitch]="switchCondition">
+    <ng-container *ngSwitchCase="'A'">
+        <p>Sua letra é: A </p>       
+    </ng-container>
+    <ng-container *ngSwitchCase="'B'">
+        <p>Sua letra é: B </p>       
+    </ng-container>
+    <ng-container *ngSwitchDefault>
+        <p>Os dados não foram encontrados</p>       
+    </ng-container>
+</ng-container>
 

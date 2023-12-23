@@ -26,12 +26,17 @@ export class TemplateControlFlowComponent {
     }
 
     //FOR Pt 2
-    public itens = [{ name : 'Lucas Fernandes'}];
+    // public itens = [{ name : 'Lucas Fernandes'}];
 
     public addNewName(value : string){
       return this.itens.push({ name: value});
     }
 
     //FOR Pt 3
+    public itens: Array<{ name : string}> = [];  
 
-}
+
+    //IF, FOR, SWITCH CASE
+    public switchCondition = 'C';    
+
+  }
