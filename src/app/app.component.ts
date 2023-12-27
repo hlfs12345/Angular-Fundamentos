@@ -9,6 +9,7 @@ import { TemplateVariablesComponent } from "./components/template/template-varia
 import { TemplateControlFlowComponent } from "./components/template/template-control-flow/template-control-flow.component";
 import { TemplateDeferrableViewsComponent } from './components/template/template-deferrable-views/template-deferrable-views.component';
 import { SignalsComponent } from './components/signals/signals/signals.component';
+import { PaiComponent } from './components/comunicacao-entre-components/pai/pai.component';
 
 @Component({
     selector: 'app-root',
@@ -22,7 +23,8 @@ import { SignalsComponent } from './components/signals/signals/signals.component
     <!-- <app-template-variables/> -->
     <!-- <app-template-control-flow> -->
     <!-- <app-template-deferrable-views> -->
-      <app-signals/>
+      <!-- <app-signals/> -->
+      <app-pai/>
   <!-- </div> -->
   
   `,
@@ -33,7 +35,8 @@ import { SignalsComponent } from './components/signals/signals/signals.component
               TemplateVariablesComponent, 
               TemplateControlFlowComponent,
               TemplateDeferrableViewsComponent,
-              SignalsComponent
+              SignalsComponent,
+              PaiComponent
             ]
 })
 export class AppComponent {}
