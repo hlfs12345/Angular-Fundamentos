@@ -1,0 +1,33 @@
+<h2>Pipes</h2>
+
+<ul>
+    <li>
+        Date: {{ date() | date : 'dd/MM/yyyy HH:mm:ss' }}
+    </li>
+    <li>
+        Upper Case: {{ "lucas fernandes" | uppercase }}
+    </li>
+    <li>
+        Lower Case: {{ "lucas fernandes" | lowercase }}
+    </li>
+    <li>
+        Json: {{json() | json }}   
+    </li>
+    <li>
+        Async: {{loadingData$ | async }}   
+    </li>
+
+    <li>
+        Currency: {{200.5 | currency : "BRL" }}   
+    </li>
+    <li>
+        Decimal: {{2000.55 | number : "1.3" }}   
+    </li>
+    <li>
+        Percent: {{20.1/100 | percent: "1.0-1" }}   
+    </li>
+
+    <li>
+        Custom String: {{"Lucas Fernandes" | customString : "upper"   }}   
+    </li>
+</ul>
