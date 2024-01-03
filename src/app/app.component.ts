@@ -13,6 +13,8 @@ import { PaiComponent } from './components/comunicacao-entre-components/pai/pai.
 import { AngularPipesComponent } from './components/pipes/angular-pipes/angular-pipes.component';
 import { ReactiveFormsComponent } from './components/forms/reactive-forms/reactive-forms.component';
 import { TemplateDrivenFormsComponent } from './components/forms/template-driven-forms/template-driven-forms.component';
+import { ContentComponent } from './components/content/content.component';
+import { HostElementsComponent } from './components/host-elements/host-elements.component';
 
 @Component({
     selector: 'app-root',
@@ -30,7 +32,26 @@ import { TemplateDrivenFormsComponent } from './components/forms/template-driven
     <!-- <app-pai/> -->
     <!-- <app-angular-pipes/> -->
     <!-- <app-template-driven-forms/> -->
-    <app-reactive-forms/>
+    <!-- <app-reactive-forms/> -->
+
+    <!-- ng-content example 
+      
+    <app-content>
+      <p text>Text</p>
+      
+      <footer class="footer">
+        <p>Footer</p>
+      </footer>
+
+      <header id="header">
+        <p>Header</p>
+      </header>
+
+    </app-content> -->
+
+    <app-host-elements/>
+
+
   <!-- </div> -->
   
   `,
@@ -45,7 +66,9 @@ import { TemplateDrivenFormsComponent } from './components/forms/template-driven
               PaiComponent,
               AngularPipesComponent,
               ReactiveFormsComponent,
-              TemplateDrivenFormsComponent
+              TemplateDrivenFormsComponent,
+              ContentComponent,
+              HostElementsComponent
             ]
 })
 export class AppComponent {}
